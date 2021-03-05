@@ -1,0 +1,1 @@
+web: gunicorn tokenApi.wsgi --log-file

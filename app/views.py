@@ -100,8 +100,9 @@ def tokenRefresh(request):
 
 @api_view(['POST'])
 def unassign(request):
+    
+    requestToken = request.data['token']
     try:
-        requestToken = request.data['token']
         TokenObj = Token.objects.filter(Token = requestToken).get()
         TokenObj.Status = "unassigned"
         TokenObj.save()
